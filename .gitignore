@@ -5,6 +5,10 @@ lib64/
 tests/
 instance/
 
+
+flight_application/static/images/*
+/flight_application/__pycache__/*
+
 *jpeg
 *.png
 images/

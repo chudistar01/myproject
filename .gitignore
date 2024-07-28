@@ -1,0 +1,14 @@
+bin/
+include/
+lib/
+lib64/
+tests/
+instance/
+
+__pycache__/
+*.py[cod]
+*.jpg
+.venv
+env
+venv/
+pyvenv.cfg                                                                                                            

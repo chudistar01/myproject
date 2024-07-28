@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Flights{% endblock %}
+
+{% block content %}
+	<h1>Search Flights</h1>
+	{% if error %}
+    		<div class="error">{{ error }}</div>
+	{% endif %}
+
+<form method="post" action="{{ url_for('search_flights') }}">
+    <label for="departure_airport">Departure Airport :</label>
+    <input type="text" id="departure_airport" name="departure_airport" required><br>
+
+    <label for="arrival_airport">Arrival Airport :</label>
+    <input type="text" id="arrival_airport" name="arrival_airport" required><br>
+
+    <label for="departure_time">Departure Time (YYYY-MM-DD HH:MM:SS):</label>
+    <input type="datetime-local" id="departure_time" name="departure_time"><br>
+
+    <input type="submit" value="Search Flights">
+</form>
+{% endblock content %}

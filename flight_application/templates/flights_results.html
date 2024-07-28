@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Available Flights {% endblock %}
+
+{% block content %}
+	<h1> Available Flights </h1>
+	{% if message %}
+		<p>{{ message }}</p>
+	{% else %}
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Departure Airport</th>
+					<th>Arrival Airport</th>
+					<th>Departure Time</th>
+					<th>Arrival Time</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for flight in flights %}
+				<tr>
+					<td>{{ flight.departure_airport}} </td>
+					<td>{{ flight.arrival_airport }} </td>
+					<td>{{ flight.departure_time }} </td>
+					<td>{{ flight.arrival_time }} </td>
+					<td>{{ flight.price }} </td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+{% endblock %}

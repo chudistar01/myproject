@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}FlightApp{% endblock %}
+
+{% block content %}
+<header>
+        <nav>
+            <ul>
+		       <li><a href="{{ url_for('users.register_user') }}">Register</a></li>
+                        <li><a href="{{ url_for('users.login') }}">Login</a></li>
+			<li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('users.logout') }}">Logout</a></li>
+
+            </ul>
+        </nav>
+    </header>
+<h1>Welcome to MyChris-Airway!</h1>
+<h3>Your gateway to the world's best flight deals.</h3>
+{% endblock %}

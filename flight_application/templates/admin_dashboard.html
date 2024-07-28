@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+{% block content %}
+
+<header>
+        <nav>
+            <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('users.logout') }}">Logout</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Admin Dashboard</h1>
+    <h3>Welcome, {{ session['username'] }}!</h3>
+    
+    <ul>
+        <li><a href="{{ url_for('admin_bp.create_flight') }}">Create Flight</a></li>
+        <li><a href="{{ url_for('admin_bp.delete_flight_form') }}">Delete Flight</a></li>
+        <!-- Add more admin functionalities as needed -->
+    </ul>
+{% endblock %}

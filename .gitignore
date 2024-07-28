@@ -5,6 +5,7 @@ lib64/
 tests/
 instance/
 
+images/
 __pycache__/
 *.py[cod]
 *.jpg

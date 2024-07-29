@@ -1,13 +1,12 @@
 bin/
 include/
 lib/
-lib64/
-tests/i
+lib64
+tests/
 instance/
-myproject/flight_application/static/css/images/*
-myproject/flight_application/__pycache__/*.pyc
+myproject/flight_application/__pycache__/*
 myproject/flight_application/d.py
 .venv
-env
+.env
 venv/
 pyvenv.cfg                                                                                                            

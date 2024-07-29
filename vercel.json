@@ -1,0 +1,9 @@
+{
+	"version": 2,
+	"builds": [
+		{ "src": "flight_application/wsgi.py", "use": "@vercel/python" }
+	],
+	"routes": [
+		{ "src": "/(.*)", "dest": "flight_application/wsgi.py" }
+	]
+}

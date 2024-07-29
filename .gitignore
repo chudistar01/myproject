@@ -1,7 +1,11 @@
+myproject/flight_application/__pycache__/
+myproject/flight_application/__pycache__
+myproject/flight_application/__pycache__/*
+/__init__
 bin/
 include/
 lib/
-lib64
+lib64/
 tests/
 instance/
 myproject/flight_application/__pycache__/*

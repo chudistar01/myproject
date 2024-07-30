@@ -29,7 +29,7 @@ def register_user():
 
         try:
 
-            user = db.execute('SELECT id FROM Users WHERE username = ?',(username,)).fetchone()
+            user = db.execute('SELECT user_id FROM Users WHERE username = ?',(username,)).fetchone()
 
             if user is not None:
                 flash(f'User {username} is already registered.', 'error')

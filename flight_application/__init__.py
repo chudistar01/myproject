@@ -34,6 +34,13 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+
+    @app.before_first_request
+    def initialize_database():
+        if not os.path.exists(app.config['DATABASE']):
+            with app.app_context():
+                db.init_db()
+
     @app.route('/')
     def index():
         return render_template('index.html')

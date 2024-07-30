@@ -11,12 +11,16 @@ from . import db, register, admin
 
 def create_app(test_config=None):
     app = Flask(__name__, static_url_path='/static', static_folder='static', instance_relative_config=True)
-    db.init_app(app)
+
+    db_path = os.getenv('DATABASE', '/tmp/flight_application.sqlite')
+
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flight_application.sqlite'),
         DEBUG=True
     )
+
+    db.init_app(app)
     app.register_blueprint(register.user_bp)
     app.register_blueprint(admin.admin_bp)
 
